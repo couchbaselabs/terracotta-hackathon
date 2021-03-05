@@ -1,0 +1,21 @@
+runtime: nodejs14
+env_variables:
+  APP_PORT: 8080
+instance_class: B1
+manual_scaling:
+  instances: 1
+health_check:
+  enable_health_check: False
+handlers:
+  - url: /infections
+    static_files: infections/index.html
+    upload: infections/index.html
+  - url: /infections/(.*)
+    static_files: infections/\1
+    upload: infections/(.*)
+  - url: /all
+    static_files: all/index.html
+    upload: all/index.html
+  - url: /all/(.*)
+    static_files: all/\1
+    upload: all/(.*)

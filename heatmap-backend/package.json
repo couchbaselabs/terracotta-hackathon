@@ -1,0 +1,31 @@
+{
+  "name": "heatmap-backend",
+  "version": "1.0.0",
+  "main": "src/index.js",
+  "scripts": {
+    "start": "node build/index.js",
+    "dev": "nodemon src/index.js --exec babel-node",
+    "serve": "babel-node src/index.js",
+    "build": "babel src -d build --copy-files",
+    "gcp-build": "yarn build"
+  },
+  "license": "MIT",
+  "dependencies": {
+    "@turf/turf": "^6.3.0",
+    "body-parser": "^1.19.0",
+    "cors": "^2.8.5",
+    "couchbase": "^3.1.1",
+    "csv": "^5.3.2",
+    "dotenv": "^8.2.0",
+    "express": "^4.17.1",
+    "geolib": "^3.3.1",
+    "node-geocoder": "^3.27.0"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.12.13",
+    "@babel/core": "^7.12.10",
+    "@babel/node": "^7.12.10",
+    "@babel/preset-env": "^7.12.11",
+    "nodemon": "^2.0.7"
+  }
+}
